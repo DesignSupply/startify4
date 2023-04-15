@@ -3,6 +3,13 @@
   <head>
     {{> head }}
     {{> meta }}
+    <script type="application/ld+json">
+      {
+        "@context":"http://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement": [{"@type":"ListItem","position":1,"item":{"@id":"{{appUrl}}","name":"HOME"}}]
+      }
+    </script>
   </head>
   <body class="page-home-body">
     <noscript>※当ウェブサイトを快適に閲覧していただくためjavascriptを有効にしてください</noscript>
@@ -16,3 +23,4 @@
     {{> 'body-scripts' }}
   </body>
 </html>
+

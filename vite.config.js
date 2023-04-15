@@ -3,6 +3,14 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import handlebars from 'vite-plugin-handlebars';
 
+const env = {
+  url: {
+    development: 'http:localhost',
+    production: 'https://example.com'
+  },
+  pageData: require('./pagemeta.json')
+}
+
 export default defineConfig(({ command }) => ({
   server: {
     port: 2000,
@@ -20,6 +28,7 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'src/index.html'),
+        page1: resolve(__dirname, 'src/page1.html'),
       },
       output: {
         entryFileNames: 'assets/scripts/[name].min.js',
@@ -48,8 +57,11 @@ export default defineConfig(({ command }) => ({
   },
   plugins: [
     handlebars({
-      context: {
-        appUrl: command === 'serve' ? 'http:localhost/' : 'https://example.com/'
+      context: (pagePath) => {
+        return {
+          appUrl: command === 'serve' ? env.url.development : env.url.production,
+          pageMeta: env.pageData.pageMeta[pagePath]
+        }
       },
       partialDirectory: [
         resolve(__dirname, 'src/hbs'),
