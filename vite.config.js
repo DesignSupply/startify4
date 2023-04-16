@@ -8,7 +8,7 @@ const env = {
     development: 'http:localhost',
     production: 'https://example.com'
   },
-  pageData: require('./pagemeta.json')
+  siteData: require('./sitedata.json')
 }
 
 export default defineConfig(({ command }) => ({
@@ -60,7 +60,9 @@ export default defineConfig(({ command }) => ({
       context: (pagePath) => {
         return {
           appUrl: command === 'serve' ? env.url.development : env.url.production,
-          pageMeta: env.pageData.pageMeta[pagePath]
+          siteName: env.siteData.siteName,
+          siteUrl: env.siteData.siteUrl,
+          pageMeta: env.siteData.pageMeta[pagePath]
         }
       },
       partialDirectory: [
