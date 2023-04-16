@@ -14,7 +14,7 @@
     "/page1.html": {
       "id": 2,
       "name": "page1",
-      "title": "ページ1",
+      "title": "ページ1｜サンプルサイト",
       "description": "ページ1の説明文です",
       "ogpImage": "/public/images/icon/ogp_default.jpg",
       "type": "article",

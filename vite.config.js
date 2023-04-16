@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import handlebars from 'vite-plugin-handlebars';
+import globule from 'globule';
 
 const env = {
   url: {
@@ -10,6 +11,19 @@ const env = {
   },
   siteData: require('./sitedata.json')
 }
+
+const htmlFiles = globule.find('src/**/*.html', {
+  ignore: [ 
+    'src/hbs/*.html',
+    'src/**/_*.html' 
+  ]
+});
+
+const multiPageObject = Object.fromEntries(htmlFiles.map((path) => {
+  return [
+    path.split('/').slice(-1)[0].replace('.html', ''), resolve(__dirname, path)
+  ]
+}));
 
 export default defineConfig(({ command }) => ({
   server: {
@@ -26,10 +40,7 @@ export default defineConfig(({ command }) => ({
     cssCodeSplit: false,
     sourcemap: true,
     rollupOptions: {
-      input: {
-        index: resolve(__dirname, 'src/index.html'),
-        page1: resolve(__dirname, 'src/page1.html'),
-      },
+      input: multiPageObject,
       output: {
         entryFileNames: 'assets/scripts/[name].min.js',
         chunkFileNames: 'assets/scripts/[name].min.js',
@@ -59,7 +70,7 @@ export default defineConfig(({ command }) => ({
     handlebars({
       context: (pagePath) => {
         return {
-          appUrl: command === 'serve' ? env.url.development : env.url.production,
+          envUrl: command === 'serve' ? env.url.development : env.url.production,
           siteName: env.siteData.siteName,
           siteUrl: env.siteData.siteUrl,
           pageMeta: env.siteData.pageMeta[pagePath]
