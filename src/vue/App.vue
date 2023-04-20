@@ -1,6 +1,6 @@
 <template>
   <router-view />
-  <example-component :message="data.text"></example-component>
+  <example-component :message="data.text" />
 </template>
 
 <script lang="ts" setup>
