@@ -9,8 +9,9 @@
     "build": "tsc && vite build",
     "build-vue": "vue-tsc && vite build",
     "preview": "vite preview",
-    "style-lint": "stylelint src/**/*.{css,scss,vue,tsx,ts}",
-    "es-lint": "eslint src/**/*.{vue,ts}"
+    "lint": "npm run lint:style && npm run lint:es",
+    "lint:style": "stylelint src/**/*.{css,scss,vue,tsx,ts}",
+    "lint:es": "eslint src/**/*.{vue,ts}"
   },
   "repository": {
     "type": "git",
