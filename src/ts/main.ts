@@ -11,5 +11,5 @@ createApp(App)
   .mount('#app');
 
 $(function() {
-  console.log('jQuery is ready.')
+  console.log('jQuery is ready.');
 });
