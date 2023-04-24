@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../vue/pages/Home.vue';
 
 export const useRouter = createRouter({
@@ -8,6 +8,6 @@ export const useRouter = createRouter({
       path: '/',
       name: 'Home',
       component: Home
-    },
+    }
   ]
 });
