@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "markuplint:recommended"
+  ],
+  "parser": {
+    ".mustache$|.hbs$": "@markuplint/mustache-parser",
+    ".vue$": "@markuplint/vue-parser"
+  },
+  "specs": {
+    ".vue$": "@markuplint/vue-spec"
+  },
+  "rules": {
+    "character-reference": false,
+    "permitted-contents": false,
+    "required-h1": false
+  },
+  "nodeRules": [
+    {
+      "selector": "head",
+      "rules": {
+        "required-element": {
+          "options": {
+            "ignoreHasMutableContents": true
+          }
+        }
+      }
+    }
+  ]
+}
