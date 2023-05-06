@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import handlebars from 'vite-plugin-handlebars';
+import pug from 'vite-plugin-pug';
 import globule from 'globule';
 
 const env = {
@@ -80,6 +81,14 @@ export default defineConfig(({ command }) => ({
         resolve(__dirname, 'src/hbs'),
         resolve(__dirname, 'src/hbs/components'),
       ]
+    }),
+    pug({
+      localImports: true
+    }, {
+      envUrl: command === 'serve' ? env.url.development : env.url.production,
+      siteName: env.siteData.siteName,
+      siteUrl: env.siteData.siteUrl,
+      pageMeta: env.siteData.pageMeta
     }),
     vue()
   ]

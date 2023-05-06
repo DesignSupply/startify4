@@ -4,7 +4,8 @@
   ],
   "parser": {
     ".mustache$|.hbs$": "@markuplint/mustache-parser",
-    ".vue$": "@markuplint/vue-parser"
+    ".vue$": "@markuplint/vue-parser",
+    ".pug$": "@markuplint/pug-parser"
   },
   "specs": {
     ".vue$": "@markuplint/vue-spec"
