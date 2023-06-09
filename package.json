@@ -10,10 +10,10 @@
     "build-vue": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint": "npm run lint:style && npm run lint:es && npm run lint:html",
-    "lint:style": "stylelint src/**/*.{css,scss,vue,tsx,ts}",
-    "lint:es": "eslint src/**/*.{vue,ts}",
-    "lint:html": "markuplint src/**/*.{html,hbs,vue,pug}",
-    "format": "prettier --write 'src/**/*.{ts,js,json,md,html,vue,hbs}' 'dist/**/*.html'"
+    "lint:style": "stylelint src/**/*.{css,scss,vue,ts,tsx}",
+    "lint:es": "eslint src/**/*.{vue,ts,tsx}",
+    "lint:html": "markuplint src/**/*.{html,hbs,vue,pug,tsx}",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,json,md,html,vue,hbs}' 'dist/**/*.html'"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,10 @@
     "url": "https://designsupply-web.com/"
   },
   "devDependencies": {
+    "@markuplint/jsx-parser": "^3.7.0",
     "@markuplint/mustache-parser": "^3.6.1",
     "@markuplint/pug-parser": "^3.7.0",
+    "@markuplint/react-spec": "^3.8.0",
     "@markuplint/vue-parser": "^3.6.1",
     "@markuplint/vue-spec": "^3.7.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",

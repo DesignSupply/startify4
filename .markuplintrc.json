@@ -4,10 +4,12 @@
   ],
   "parser": {
     ".mustache$|.hbs$": "@markuplint/mustache-parser",
+    ".tsx$": "@markuplint/jsx-parser",
     ".vue$": "@markuplint/vue-parser",
     ".pug$": "@markuplint/pug-parser"
   },
   "specs": {
+    ".tsx$": "@markuplint/react-spec",
     ".vue$": "@markuplint/vue-spec"
   },
   "rules": {
