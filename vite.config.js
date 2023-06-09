@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react'
 import vue from '@vitejs/plugin-vue';
 import handlebars from 'vite-plugin-handlebars';
 import pug from 'vite-plugin-pug';
@@ -90,6 +91,7 @@ export default defineConfig(({ command }) => ({
       siteUrl: env.siteData.siteUrl,
       pageMeta: env.siteData.pageMeta
     }),
+    react(),
     vue()
   ]
 }));
