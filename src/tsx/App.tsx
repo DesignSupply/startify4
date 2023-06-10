@@ -1,16 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import ExampleComponent from './components/ExampleComponent';
-import { ContextProvider } from './ContextProvider';
+
+const storeData = {
+  message: 'Hello World'
+}
+const SampleContext = createContext({});
 
 const App: React.FC = () => {
   const [text, setText] = useState('ExampleComponent');
+  const [context, setContext] = useState(storeData);
+  console.log(`React is ready. ${context.message}`);
   return (
     <>
-      <ContextProvider>
+      <SampleContext.Provider value={{context, setContext}}>
         <ExampleComponent message={text} />
-      </ContextProvider>
+      </SampleContext.Provider>
     </>
   )
+}
+
+export function useSampleContext() {
+  return useContext(SampleContext);
 }
 
 export default App;
