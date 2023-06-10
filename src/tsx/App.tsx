@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ExampleComponent from './components/ExampleComponent'
 
 const App: React.FC = () => {
+  const [text, setText] = useState('ExampleComponent');
+  useEffect(() => {
+    console.log('React is ready.');
+  }, []);
   return (
     <>
-      <h1>Startify 4</h1>
+      <ExampleComponent message={text} />
     </>
   )
 }
