@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import ExampleComponent from './components/ExampleComponent'
+import ExampleComponent from './components/ExampleComponent';
+import { ContextProvider } from './ContextProvider';
 
 const App: React.FC = () => {
   const [text, setText] = useState('ExampleComponent');
-  useEffect(() => {
-    console.log('React is ready.');
-  }, []);
   return (
     <>
-      <ExampleComponent message={text} />
+      <ContextProvider>
+        <ExampleComponent message={text} />
+      </ContextProvider>
     </>
   )
 }
