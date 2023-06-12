@@ -73,6 +73,7 @@
     "pinia": "^2.0.34",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
