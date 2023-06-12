@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import ExampleComponent from './components/ExampleComponent';
 
 const storeData = {
@@ -10,6 +10,9 @@ const App: React.FC = () => {
   const [text, setText] = useState('ExampleComponent');
   const [context, setContext] = useState(storeData);
   console.log(`React is ready. ${context.message}`);
+  useEffect(() => {
+    setContext({message: 'state updated'});
+  }, []);
   return (
     <>
       <SampleContext.Provider value={{context, setContext}}>
