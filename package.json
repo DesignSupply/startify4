@@ -82,8 +82,5 @@
     "ie >= 11",
     "iOS >= 8.1",
     "Android >= 4.4"
-  ],
-  "resolutions": {
-    "@types/react": "18.2.0"
-  }
+  ]
 }
