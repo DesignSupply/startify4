@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App: React.FC = () => {
+const App = (): JSX.Element => {
   const [text, setText] = useState('ExampleComponent');
   const [context, setContext] = useState(storeData);
   console.log(`React is ready. ${context.message}`);

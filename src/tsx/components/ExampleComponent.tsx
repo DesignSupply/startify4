@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
-
 interface propsInterface {
   message: string
 }
 
-const ExampleComponent: React.FC<propsInterface> = (props) => {
+const ExampleComponent = (props: propsInterface): JSX.Element => {
   return (
     <>
       <p>{props.message}</p>

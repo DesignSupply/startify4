@@ -38,8 +38,8 @@
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@types/jquery": "^3.5.16",
     "@types/node": "^18.15.11",
-    "@types/react": "^18.2.9",
-    "@types/react-dom": "^18.2.4",
+    "@types/react": "^18.2.12",
+    "@types/react-dom": "^18.2.5",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "@vitejs/plugin-react": "^4.0.0",
@@ -82,5 +82,8 @@
     "ie >= 11",
     "iOS >= 8.1",
     "Android >= 4.4"
-  ]
+  ],
+  "resolutions": {
+    "@types/react": "18.2.0"
+  }
 }

@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home: React.FC = () => {
+const Home = (): JSX.Element => {
   return (
     <>
       <h1>Current page：Home</h1>
