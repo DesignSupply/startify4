@@ -19,7 +19,7 @@ Startify4で主にできることは以下になります。
 * Autoprefixerを使ったベンダープレフィックスの自動付与
 * JavaScriptのトランスパイル
 * TypeScriptのコンパイル（本番環境用・開発環境用）
-* Vue.js（Pinia、Vue Router対応）・React（React Router対応）の使用
+* Vue.js（Pinia、Vue Router対応）・React（Context、React Router対応）の使用
 * TailwindCSSの使用
 * ソースコードのマッピングファイルの生成
 * HTML、CSS、JavaScriptファイルのminify対応
