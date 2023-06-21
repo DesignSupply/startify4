@@ -6,7 +6,7 @@ import App from '../tsx/App';
 
 // React
 ReactDOM.createRoot(document.getElementById('app') as HTMLElement).render(
-  <React.StrictMode>  
+  <React.StrictMode>
     <App />
   </React.StrictMode>
 );

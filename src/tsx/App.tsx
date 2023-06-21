@@ -7,10 +7,10 @@ import Home from './pages/Home';
 const storeData = {
   message: 'Hello World'
 }
-const SampleContext = createContext({});
+const Context = createContext<{ message: string} | null>(null);
 
 // route
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
@@ -26,16 +26,16 @@ const App = (): JSX.Element => {
   }, []);
   return (
     <>
-      <SampleContext.Provider value={{context, setContext}}>
-        <RouterProvider router={router} />
+      <Context.Provider value={context}>
+        <RouterProvider router={routes} />
         <ExampleComponent message={text} />
-      </SampleContext.Provider>
+      </Context.Provider>
     </>
   )
 }
 
 export function useSampleContext() {
-  return useContext(SampleContext);
+  return useContext(Context);
 }
 
 export default App;

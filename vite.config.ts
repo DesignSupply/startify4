@@ -48,14 +48,16 @@ export default defineConfig(({ command }) => ({
         entryFileNames: 'assets/scripts/[name].min.js',
         chunkFileNames: 'assets/scripts/[name].min.js',
         assetFileNames: (assetFile) => {
-          if(/\.css$/.test(assetFile.name)) {
-            return 'assets/stylesheets/[name].min.[ext]';
-          } else if(/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(assetFile.name)) {
-            return 'assets/images/[name].min.[ext]';
-          } else if(/\.( ttf|otf|eot|woff|woff2| )$/.test(assetFile.name)) {
-            return 'assets/fonts/[name].[ext]';
-          } else {
-            return 'assets/[name].[ext]';
+          if(assetFile.name !== undefined) {
+            if(/\.css$/.test(assetFile.name)) {
+              return 'assets/stylesheets/[name].min.[ext]';
+            } else if(/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(assetFile.name)) {
+              return 'assets/images/[name].min.[ext]';
+            } else if(/\.( ttf|otf|eot|woff|woff2| )$/.test(assetFile.name)) {
+              return 'assets/fonts/[name].[ext]';
+            } else {
+              return 'assets/[name].[ext]';
+            }
           }
         } 
       }
