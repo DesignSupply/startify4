@@ -27,6 +27,7 @@ const multiPageObject = Object.fromEntries(htmlFiles.map((path) => {
   ]
 }));
 
+// @ts-ignore
 export default defineConfig(({ command }) => ({
   server: {
     port: 2000,

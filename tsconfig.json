@@ -24,7 +24,9 @@
     "src/**/*.jsx", 
     "src/**/*.vue",
     "types/**/*.d.ts",
-    "vite.config.js"
+    "vite.config.ts",
+    "postcss.config.cjs",
+    "tailwind.config.js",
   ],
   "exclude": [
     "node_modules"
