@@ -68,6 +68,7 @@ $ npm run build
 * 初期設定では開発用ローカルサーバーのポート番号は2000となっています。
 * 初期設定ではバンドル対象のファイルはdist/assetsディレクトリ配下に、src/staticディレクトリに含まれる静的ファイルはdist/publicディレクトリ配下に出力されるようになっています。
 * 初期設定ではHTMLのテンプレートエンジンはPugとなっており、src/_example-pug.htmlもしくはsrc/_example-handlebars.htmlを各種サンプルとして用意しています。
+* .vueファイルをコンパイルする場合には、tsconfig.jsonのcompilerOptionsオプション内のjsxの指定を「preserve」に変更します。
 
 
 

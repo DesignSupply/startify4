@@ -1,6 +1,6 @@
 {
   "name": "startify4",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Development environment for website creation with design and static coding.",
   "private": true,
   "type": "module",
