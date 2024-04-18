@@ -1,8 +1,3 @@
-<template>
-  <router-view />
-  <example-component :message="data.text" />
-</template>
-
 <script lang="ts" setup>
 import { reactive } from 'vue';
 import { useStore } from '../ts/store';
@@ -14,3 +9,8 @@ const data = reactive({
 store.updateMessage('state updated');
 console.log(`Vue.js is ready. ${store.message}`);
 </script>
+
+<template>
+  <router-view />
+  <example-component :message="data.text" />
+</template>
